@@ -1,0 +1,1 @@
+{"uuid":"0ef0d52e-dc4f-4435-95e3-db7d06979512","name":"utils.BaseClass.logoutApp","children":["2ff2d775-a949-4de9-962c-0b3431be82ba"],"description":"","befores":[],"afters":[{"name":"logoutApp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1672035871185,"stop":1672035871801}],"start":1672035871185,"stop":1672035871801}

@@ -1,0 +1,1 @@
+{"uuid":"d478f7be-a9f1-479a-954b-d49d9f205a9b","name":"utils.BaseClass.loginApp","children":["f6cb3dff-6183-4a2f-9276-d234462e9fb4"],"description":"","befores":[{"name":"loginApp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1671711082574,"stop":1671711088098}],"afters":[],"start":1671711082574,"stop":1671711088098}

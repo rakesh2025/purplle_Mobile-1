@@ -1,0 +1,1 @@
+{"uuid":"f24b2d1b-7d96-4051-8b0e-a07adc230faf","name":"Default Suite","children":["bba5235b-c94d-4627-9693-85fe51f174ab"],"befores":[{"name":"staringServer","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1671518308114,"stop":1671518309421}],"afters":[],"start":1671518308096,"stop":1671518363711}
