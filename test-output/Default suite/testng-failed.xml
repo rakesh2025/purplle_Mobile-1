@@ -9,9 +9,9 @@
           <include name="closeApp"/>
           <include name="loginApp"/>
           <include name="logoutApp"/>
-          <include name="staringServer"/>
           <include name="openApp"/>
           <include name="stopingServer"/>
+          <include name="staringServer"/>
         </methods>
       </class> <!-- tests.ProductGeneric -->
     </classes>
