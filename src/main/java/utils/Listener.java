@@ -42,13 +42,16 @@ public class Listener implements ITestListener {
         test.log(Status.FAIL, result.getMethod().getMethodName()+"is Failed");
         String path=null;
         try {
-            MobileUtils util=new MobileUtils();
+           // MobileUtils util=new MobileUtils();
+        	//BaseClass bc=new BaseClass();
+        	path=new MobileUtils().TakesScreenShots(BaseClass.sDriver, result.getMethod().getMethodName());
 
 
         } catch (Throwable e)
         {
             e.printStackTrace();
         }
+        test.addScreenCaptureFromPath(path);
     }
 
     public void onTestSkipped(ITestResult result)

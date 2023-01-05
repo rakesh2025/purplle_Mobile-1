@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.AddTwoProductToCart">
+      <class name="tests.ProductGeneric">
         <methods>
+          <include name="addProductToCartTest" invocation-numbers="0"/>
           <include name="closeApp"/>
           <include name="loginApp"/>
           <include name="logoutApp"/>
-          <include name="addProductToCartTest" invocation-numbers="0"/>
           <include name="staringServer"/>
           <include name="openApp"/>
           <include name="stopingServer"/>
         </methods>
-      </class> <!-- tests.AddTwoProductToCart -->
+      </class> <!-- tests.ProductGeneric -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

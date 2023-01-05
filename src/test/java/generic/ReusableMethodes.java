@@ -13,15 +13,15 @@ public class ReusableMethodes extends BaseClass{
 	//AndroidDriver apkDriver;
 
 	public void selectAProductFromCategory(String Category, String SubCategory, String ProductCategory,String BrandName,String ProductName) throws Throwable {
-		HomePage hp = new HomePage(apkDriver);
+		HomePage hp = new HomePage(driver);
     	//Clicked on Categories
         hp.getCategories().click();
         Listener.test.log(Status.INFO,"Clicked on category.");
-        CategoriesPage catPage = new CategoriesPage(apkDriver);
-        catPage.chooseCategories(Category,SubCategory , ProductCategory);
+        CategoriesPage catPage = new CategoriesPage(driver);
+       // catPage.chooseCategories(Category,SubCategory , ProductCategory);
         Listener.test.log(Status.INFO,"Select Category,subCategory,productCategory");
-        PerfumePage pp = new PerfumePage(apkDriver);
-        pp.clickOnProduct(BrandName,ProductName);
+        PerfumePage pp = new PerfumePage(driver);
+       // pp.clickOnProduct(BrandName,ProductName);
         Listener.test.log(Status.INFO,"Select the Brand & Product");
 	}
 }

@@ -30,29 +30,29 @@ public class TC_Purplle_001 extends BaseClass
     @Test
     public void checkAllPages() throws Throwable
     {
-        HomePage hp = new HomePage(apkDriver);
+        HomePage hp = new HomePage(driver);
         Thread.sleep(2000);
         Assert.assertTrue(hp.getSearchButton().isDisplayed(),"Home page is not displaying");
         Listener.test.log(Status.INFO,"Verified Home page.");
         //Clicking on Category
         hp.getCategories().click();
-        CategoriesPage catPage = new CategoriesPage(apkDriver);
+        CategoriesPage catPage = new CategoriesPage(driver);
         Assert.assertEquals(catPage.getCategoriesTitle().isDisplayed(),true);
         Listener.test.log(Status.INFO,"Verified Category page.");
         MobileUtils mUtils = new MobileUtils();
-        mUtils.scrollToElementAndClick(apkDriver, catPage.getMomAndBabyCategories());
-        catPage.ScrollToMaternity();
+        mUtils.scrollToElementAndClick(driver, catPage.getMomAndBabyCategories());
+        catPage.ScrollToMaternity(driver);
         //Thread.sleep(2000);
         //mUtils.scrollToElementAndClick(apkDriver, catPage.getCategoryLink("Mom & Baby "));
         
         //Clicked on brand button
         hp.getBrandButton().click();
-        BrandsPage brandPage = new BrandsPage(apkDriver);
+        BrandsPage brandPage = new BrandsPage(driver);
         Listener.test.log(Status.INFO,"Verified Brand page.");
         brandPage.getSearchFiled().sendKeys("Lakme");
         Assert.assertTrue(brandPage.getSearchFiled().isDisplayed(),"Search field is not displaying.");
         //apkDriver.pressKey(new KeyEvent().withKey(AndroidKey.ENTER));
-        brandPage.clickOnBrandName(apkDriver);
+        brandPage.clickOnBrandName(driver);
         Assert.assertTrue(brandPage.getBrandPageTitle().isDisplayed(),"Brand page is opening.");
         List<MobileElement> li = brandPage.getProductListInBrandPage();
         for(MobileElement ele:li) {
@@ -61,11 +61,11 @@ public class TC_Purplle_001 extends BaseClass
         }
         Listener.test.log(Status.INFO,"Verified the product.");
         brandPage.clickOnBackButton();
-        apkDriver.hideKeyboard();
+        driver.hideKeyboard();
         //Thread.sleep(2000);
         //Clicked on offer button
         hp.getOffersButton().click();
-        OfferPage op=new OfferPage(apkDriver);
+        OfferPage op=new OfferPage(driver);
         Assert.assertTrue(op.getOfferTitle().isDisplayed(),"Offer Page is not displaying");
         Listener.test.log(Status.INFO,"Verified offer page.");
         
@@ -73,8 +73,12 @@ public class TC_Purplle_001 extends BaseClass
         //Clicked on studio button
         hp.getStudioButton().click();
         Thread.sleep(3000);
-        BeautyStudioPage bsp=new BeautyStudioPage(apkDriver);
+        BeautyStudioPage bsp=new BeautyStudioPage(driver);
         Assert.assertTrue(bsp.getBeautyStudioPageTitle().isDisplayed(),"Beauty Studio page is not dispolaying");
+
+
+
+        Listener.test.addScreenCaptureFromPath(new MobileUtils().TakesScreenShots(driver,"Studio Page"));
         Listener.test.log(Status.INFO,"Verified Beauty Studio page.");
     }
 }

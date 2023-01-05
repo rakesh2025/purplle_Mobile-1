@@ -1,93 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-29T10:20:57 IST" name="Default suite" finished-at="2022-12-29T10:27:05 IST" duration-ms="367767">
+  <suite started-at="2023-01-05T12:42:08 IST" name="Suite" finished-at="2023-01-05T12:42:39 IST" duration-ms="30782">
     <groups>
     </groups>
-    <test started-at="2022-12-29T10:20:57 IST" name="Default test" finished-at="2022-12-29T10:27:05 IST" duration-ms="367767">
-      <class name="tests.TC_Purplle_002">
-        <test-method is-config="true" signature="staringServer()[pri:0, instance:tests.TC_Purplle_002@17d88132]" started-at="2022-12-29T10:20:54 IST" name="staringServer" finished-at="2022-12-29T10:20:57 IST" duration-ms="3451" status="PASS">
+    <test started-at="2023-01-05T12:42:08 IST" name="Test" finished-at="2023-01-05T12:42:23 IST" duration-ms="15449">
+      <class name="tests.Demo">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.Demo@35645047]" started-at="2023-01-05T12:42:08 IST" name="beforeTest" finished-at="2023-01-05T12:42:08 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- staringServer -->
-        <test-method is-config="true" signature="openApp()[pri:0, instance:tests.TC_Purplle_002@17d88132]" started-at="2022-12-29T10:20:58 IST" name="openApp" finished-at="2022-12-29T10:20:58 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:tests.Demo@35645047]" started-at="2023-01-05T12:42:08 IST" name="beforeClass" finished-at="2023-01-05T12:42:08 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method is-config="true" signature="loginApp()[pri:0, instance:tests.TC_Purplle_002@17d88132]" started-at="2022-12-29T10:20:58 IST" name="loginApp" finished-at="2022-12-29T10:21:09 IST" duration-ms="10540" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tests.Demo@35645047]" started-at="2023-01-05T12:42:08 IST" name="beforeMethod" finished-at="2023-01-05T12:42:08 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginApp -->
-        <test-method signature="addProductToCartTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.TC_Purplle_002@17d88132]" started-at="2022-12-29T10:21:09 IST" name="addProductToCartTest" data-provider="ReadVariant2" finished-at="2022-12-29T10:27:00 IST" duration-ms="350893" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Skin Care]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Moisturizers]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Face Moisturizers & Day Creams]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Good Vibes]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Good Vibes Rosehip Moisture Rich Face Cream | Lightening, Nourishing | With Jojoba Oil | No Parabens, No Sulphates, No Mineral Oil (50 g)]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Skin Care]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Moisturizers]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Serums & Essences]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Good Vibes]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[Good Vibes Vitamin C & B3 Skin Glow Face Serum | With Orange | Easy Absorption | No Parabens, No Silicones, No Sulphates, No Animal Testing (10 ml)]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tests.Demo@35645047]" started-at="2023-01-05T12:42:08 IST" name="beforeMethod" finished-at="2023-01-05T12:42:08 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addProductToCartTest -->
-        <test-method is-config="true" signature="logoutApp()[pri:0, instance:tests.TC_Purplle_002@17d88132]" started-at="2022-12-29T10:27:00 IST" name="logoutApp" finished-at="2022-12-29T10:27:00 IST" duration-ms="477" status="PASS">
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="one()[pri:2, instance:tests.Demo@35645047]" started-at="2023-01-05T12:42:08 IST" name="one" description="Test case no 1" finished-at="2023-01-05T12:42:23 IST" duration-ms="15073" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logoutApp -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:tests.TC_Purplle_002@17d88132]" started-at="2022-12-29T10:27:00 IST" name="closeApp" finished-at="2022-12-29T10:27:05 IST" duration-ms="5015" status="PASS">
+        </test-method> <!-- one -->
+        <test-method signature="two()[pri:1, instance:tests.Demo@35645047]" started-at="2023-01-05T12:42:08 IST" name="two" description="Test case no 2" finished-at="2023-01-05T12:42:23 IST" duration-ms="15073" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="stopingServer()[pri:0, instance:tests.TC_Purplle_002@17d88132]" started-at="2022-12-29T10:27:06 IST" name="stopingServer" finished-at="2022-12-29T10:27:06 IST" duration-ms="57" status="PASS">
+        </test-method> <!-- two -->
+      </class> <!-- tests.Demo -->
+    </test> <!-- Test -->
+    <test started-at="2023-01-05T12:42:24 IST" name="Test2" finished-at="2023-01-05T12:42:39 IST" duration-ms="15063">
+      <class name="tests.Demo2">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.Demo2@8576fa0]" started-at="2023-01-05T12:42:24 IST" name="beforeTest" finished-at="2023-01-05T12:42:24 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stopingServer -->
-      </class> <!-- tests.TC_Purplle_002 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:tests.Demo2@8576fa0]" started-at="2023-01-05T12:42:24 IST" name="beforeClass" finished-at="2023-01-05T12:42:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tests.Demo2@8576fa0]" started-at="2023-01-05T12:42:24 IST" name="beforeMethod" finished-at="2023-01-05T12:42:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tests.Demo2@8576fa0]" started-at="2023-01-05T12:42:24 IST" name="beforeMethod" finished-at="2023-01-05T12:42:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="three()[pri:1, instance:tests.Demo2@8576fa0]" started-at="2023-01-05T12:42:24 IST" name="three" description="Test case no 2" finished-at="2023-01-05T12:42:39 IST" duration-ms="15002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- three -->
+      </class> <!-- tests.Demo2 -->
+    </test> <!-- Test2 -->
+  </suite> <!-- Suite -->
 </testng-results>

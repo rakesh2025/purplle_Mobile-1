@@ -1,6 +1,8 @@
 package utils;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.FindsByAndroidUIAutomator;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -26,7 +28,7 @@ import java.time.LocalDateTime;
 public class MobileUtils
 {
 
-    AppiumDriver apkDriver;
+	//AppiumDriver apkDriver;
     public static Logger logger;
     public WebDriver wait;
 
@@ -36,7 +38,7 @@ public class MobileUtils
         logger = logger == null ? Logger.getLogger(MobileUtils.class) : logger;
     }
 
-    public void scrollToElementAndClick(AndroidDriver apkDriver, MobileElement me) {
+    public void scrollToElementAndClick(AppiumDriver driver, MobileElement me) {
         while (true) {
             try {
 
@@ -48,7 +50,7 @@ public class MobileUtils
                 }
             } catch (Exception e) {
                 System.out.println("Catch block activated and performing scrolling down");
-                TouchAction touch = new TouchAction(apkDriver);
+                TouchAction touch = new TouchAction(driver);
                 touch.press(PointOption.point(500, 1600))
                         .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
                         .moveTo(PointOption.point(500, 500)).release().perform();
@@ -69,16 +71,17 @@ public class MobileUtils
         Assert.assertEquals(x,y);
     }
 
-    public void clickOnMobileElement(AndroidDriver apkDriver, MobileElement me)
+    public void clickOnMobileElement(AppiumDriver apkDriver, MobileElement me)
     {
         me.click();
     }
     public String TakesScreenShots(AppiumDriver apkDriver,String screenshotName)
     {
 String localDateTime= LocalDateTime.now().toString().replace(":","-");
-String filePath = "./errorshots"+screenshotName+localDateTime+".png";
+String filePath = "./errorshots/"+screenshotName+localDateTime+".png";
 TakesScreenshot ts = (TakesScreenshot) apkDriver;
         File scrFile = ts.getScreenshotAs(OutputType.FILE);
+        System.out.println(scrFile.toString()+"--------------------------------------------------------");
         File dest = new File(filePath);
         try {
             FileUtils.copyFile(scrFile, dest);
@@ -94,11 +97,9 @@ TakesScreenshot ts = (TakesScreenshot) apkDriver;
     	wait.until(ExpectedConditions.visibilityOf(ele));     
     	ele.click();
     }
-    public void scrollUpToElement(AndroidDriver apkDriver, MobileElement me) {
+    public void scrollUpToElement(AppiumDriver apkDriver, MobileElement me) {
         while (true) {
             try {
-
-
                 if (me.isDisplayed()) {
                     //System.out.println("conditon passed so clicking on element");
                     break;
@@ -112,7 +113,24 @@ TakesScreenshot ts = (TakesScreenshot) apkDriver;
             }
         }
     }
+   
+    
+    
+    public void scrollToElementAndClick(AppiumDriver driver, String name) {
+    	//AndroidDriver driver2 = (AndroidDriver)driver;
+    
+    	((AndroidDriver)driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+name+"\").instance(0))").click();
+    	
+     //driver.findEleme
+    }
+    public void scrollToElement(AppiumDriver driver, String name) {
+    	//AndroidDriver driver2 = (AndroidDriver)driver;
+    
+    	((AndroidDriver)driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+name+"\").instance(0))");
+    	
+     //dr
 
 
-
+    }
 }
+    

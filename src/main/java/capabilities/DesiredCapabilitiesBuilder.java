@@ -14,8 +14,8 @@ import java.net.URL;
 
 public class DesiredCapabilitiesBuilder
 {
-    public AppiumDriver<MobileElement> aDriver;
-    public AndroidDriver driver;
+    public AppiumDriver<MobileElement> driver;
+    //public AndroidDriver driver;
     public AppiumDriverLocalService service;
 
     @Test

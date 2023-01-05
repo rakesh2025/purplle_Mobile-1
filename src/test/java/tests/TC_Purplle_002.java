@@ -32,50 +32,50 @@ public class TC_Purplle_002 extends BaseClass {
 			String ProductName2) throws Throwable {
 
 		
-		  HomePage hp = new HomePage(apkDriver); 
+		  HomePage hp = new HomePage(driver); 
 		  //Clicked on Categories
 		  hp.getCategories().click();
 		  Listener.test.log(Status.INFO,"Clicked on category."); CategoriesPage
-		  catPage= new CategoriesPage(apkDriver);
+		  catPage= new CategoriesPage(driver);
 		  //Select the Category,Sub Category , Product Category
-		  catPage.chooseCategories(Category,SubCategory , ProductCategory);
+		  catPage.chooseCategories(driver, Category,SubCategory , ProductCategory);
 		  Listener.test.log(Status.INFO,"Select Category,subCategory,productCategory");
-		  PerfumePage pp = new PerfumePage(apkDriver);
+		  PerfumePage pp = new PerfumePage(driver);
 		  //Select the brand name & product
-		  pp.clickOnProduct(BrandName,ProductName);
+		  pp.clickOnProduct(driver, BrandName,ProductName);
 		  Listener.test.log(Status.INFO,"Select the Brand & Product");
 
 		String expProductName = pp.getProductName().getText();
 		String expProductPrice = pp.getProductPrice().getText();
 		// Adding the product to cart
-		pp.clickOnAddToCartButton(apkDriver);
+		pp.clickOnAddToCartButton(driver);
 		
-		pp.clickOnGoToCartButton(apkDriver);
+		pp.clickOnGoToCartButton(driver);
 		Listener.test.log(Status.INFO,"Added the first product to cart.");
-		CartPage cp = new CartPage(apkDriver);
-		String expectedName = cp.getProductNameLink(ProductName).getText();
-		String cartProductPrice = cp.getPriceOfProductLink(ProductName).getText();
-		cp.clickOnBackbutton(apkDriver);
-		pp.clickOncloseIconOnGoToCartPopup(apkDriver);
-		pp.clickOnBackButton(apkDriver);
+		CartPage cp = new CartPage(driver);
+		String expectedName = cp.getProductNameLink(driver, ProductName).getText();
+		String cartProductPrice = cp.getPriceOfProductLink(driver, ProductName).getText();
+		cp.clickOnBackbutton(driver);
+		pp.clickOncloseIconOnGoToCartPopup(driver);
+		pp.clickOnBackButton(driver);
 		Thread.sleep(2000);
-		pp.clickOnBackButtonOnProductlistingPage(apkDriver);
+		pp.clickOnBackButtonOnProductlistingPage(driver);
 		
-		hp.clickOnhomeButton(apkDriver);
+		hp.clickOnhomeButton(driver);
 		//2nd product
 		hp.getCategories().click();
 		//Select the Category,Sub Category , Product Category
-		  catPage.chooseCategories(Category2,SubCategory2 , ProductCategory2);
+		  catPage.chooseCategories(driver, Category2,SubCategory2 , ProductCategory2);
 		  Listener.test.log(Status.INFO,"Select Category,subCategory,productCategory for second product .");
 		  //Select the brand name & product
-		  pp.clickOnProduct(BrandName2,ProductName2);
+		  pp.clickOnProduct(driver, BrandName2,ProductName2);
 		  Listener.test.log(Status.INFO,"Select the Brand & Product for second product .");
 
 		String expProductName2 = pp.getProductName().getText();
 		String expProductPrice2 = pp.getProductPrice().getText();
 		// Adding the product to cart
-		pp.clickOnAddToCartButton(apkDriver);
-		pp.clickOnGoToCartButton(apkDriver);
+		pp.clickOnAddToCartButton(driver);
+		pp.clickOnGoToCartButton(driver);
 		Listener.test.log(Status.INFO,"Added second product to cart.");
 		
 		List<MobileElement> ActualPriceList = cp.getProductPriceList();
@@ -96,7 +96,7 @@ public class TC_Purplle_002 extends BaseClass {
 		Listener.test.log(Status.INFO, "Verified the second product price.");
 
 		
-		cp.clickOnViewDetailViewLink(apkDriver);
+		cp.clickOnViewDetailViewLink(driver);
 		Listener.test.log(Status.INFO, "Clicked on Detail view link .");
 		
 		String TotalMRPText = cp.getTotalMRP().getText();
@@ -111,7 +111,7 @@ public class TC_Purplle_002 extends BaseClass {
 		int CalculatedOrderTotal = Integer.parseInt(SubTotalText.substring(1))+Integer.parseInt(ShippingChargesText.substring(1));
 		Assert.assertEquals(Integer.parseInt(OrderTotalText.substring(1)), CalculatedOrderTotal);
 		Listener.test.log(Status.INFO, "Verified the order total price.");
-		cp.removeAllOrder();
+		cp.removeAllOrder(driver);
 
 	}
 

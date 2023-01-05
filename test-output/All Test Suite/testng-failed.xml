@@ -3,17 +3,17 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="/Users/naziya/Documents/Automation/Purplle/src/test/java/tests/practice.java(failed)">
     <classes>
-      <class name="tests.TC_Purplle_002">
+      <class name="tests.ProductGeneric">
         <methods>
+          <include name="addProductToCartTest" invocation-numbers="1"/>
           <include name="closeApp"/>
-          <include name="addProductToCartTest" invocation-numbers="0"/>
           <include name="loginApp"/>
           <include name="logoutApp"/>
           <include name="staringServer"/>
           <include name="openApp"/>
           <include name="stopingServer"/>
         </methods>
-      </class> <!-- tests.TC_Purplle_002 -->
+      </class> <!-- tests.ProductGeneric -->
     </classes>
   </test> <!-- /Users/naziya/Documents/Automation/Purplle/src/test/java/tests/practice.java(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

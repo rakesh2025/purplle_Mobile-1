@@ -15,8 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseClass extends MobileUtils
 {
-    public  static AppiumDriver aDriver;
-    public AndroidDriver apkDriver;
+    //public  static AppiumDriver aDriver;
+    public  AppiumDriver driver;
+    public static AppiumDriver sDriver;
     public DesiredCapabilitiesBuilder dbuild = new DesiredCapabilitiesBuilder();
     
 
@@ -25,7 +26,6 @@ public class BaseClass extends MobileUtils
     {
         dbuild.startServer();
     }
-
     @BeforeClass(alwaysRun = true)
     public void openApp()
     {
@@ -37,8 +37,9 @@ public class BaseClass extends MobileUtils
     public void loginApp() throws MalformedURLException {
         URL url = new URL("http://127.0.0.1:4723/wd/hub/");
 
-        apkDriver = new AndroidDriver(url, dbuild.getDesiredCapabilities());
-        apkDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver = new AndroidDriver(url, dbuild.getDesiredCapabilities());
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+       sDriver=driver;
     }
 
 
@@ -46,14 +47,13 @@ public class BaseClass extends MobileUtils
     @AfterMethod(alwaysRun = true)
     public void logoutApp()
     {
-        apkDriver.quit();
+    	driver.quit();
     }
 
 
     @AfterClass(alwaysRun = true)
     public void closeApp() throws InterruptedException {
-        Thread.sleep(5000);
-        apkDriver.quit();
+
     }
 
     @AfterSuite(alwaysRun = true)

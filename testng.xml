@@ -6,6 +6,8 @@
         <classes>
             <class name="tests.TC_Purplle_001"></class>
             <class name="tests.TC_Purplle_002"></class>
+            <class name="tests.ProductGeneric"></class>
+
         </classes>
     </test>
 </suite>
